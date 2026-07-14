@@ -17,6 +17,8 @@ export function initAnalytics() {
     capture_pageview: true,
     person_profiles: 'identified_only',
   })
+
+  posthog.register({ project: 'wordle' })
 }
 
 export { posthog }
