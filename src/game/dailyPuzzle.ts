@@ -19,10 +19,17 @@ function djb2Hash(value: string): number {
   return hash >>> 0
 }
 
+function hasUsableDefinition(answer: Answer): boolean {
+  const definition = answer.definition.trim().toLocaleLowerCase('it')
+  return definition.length > 0 && definition !== 'definizione non disponibile'
+}
+
 export function getDailyAnswer(pack: DialectPack, date = getItalianDate()): Answer {
   const seed = `${pack.id}:${date}:${pack.answersVersion}`
-  const index = djb2Hash(seed) % pack.answers.length
-  return pack.answers[index]
+  const preferredAnswers = pack.answers.filter(hasUsableDefinition)
+  const answerPool = preferredAnswers.length > 0 ? preferredAnswers : pack.answers
+  const index = djb2Hash(seed) % answerPool.length
+  return answerPool[index]
 }
 
 export function getPuzzleNumber(pack: DialectPack, date = getItalianDate()): number {
