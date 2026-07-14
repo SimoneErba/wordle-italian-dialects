@@ -16,7 +16,10 @@ export function createOrLoadDailyState(pack: DialectPack, mode: GameMode): Daily
 
   const stored = loadDailyGame(pack.id, mode, pack.wordLength, date)
   if (stored) {
-    return stored
+    return {
+      ...stored,
+      hintsUsed: stored.hintsUsed ?? 0,
+    }
   }
 
   const answer = getAnswerForMode(pack, date)

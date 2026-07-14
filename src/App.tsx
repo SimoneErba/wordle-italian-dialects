@@ -28,6 +28,7 @@ const copy = {
     lettersCount: (count: number) => `${count} lettere`,
     sources: 'Fonti',
     help: 'Aiuto',
+    hint: 'Indizio',
     stats: 'Statistiche',
     definition: 'Definizione',
     sourceAttribution: 'Fonti e attribuzione',
@@ -71,6 +72,7 @@ const copy = {
     lettersCount: (count: number) => `${count} letters`,
     sources: 'Sources',
     help: 'Help',
+    hint: 'Hint',
     stats: 'Stats',
     definition: 'Definition',
     sourceAttribution: 'Sources and attribution',
@@ -168,12 +170,19 @@ function FlagLogo({
   )
 }
 
-function Icon({ name }: { name: 'help' | 'stats' }) {
+function Icon({ name }: { name: 'help' | 'hint' | 'stats' }) {
   const paths = {
     help: (
       <>
         <path d="M9.1 9a3 3 0 1 1 5.8 1.1c-.4 1.1-1.4 1.6-2.1 2.2-.6.5-.8.9-.8 1.7" />
         <path d="M12 17h.01" />
+      </>
+    ),
+    hint: (
+      <>
+        <path d="M9 18h6" />
+        <path d="M10 22h4" />
+        <path d="M12 2a7 7 0 0 0-4 12.74V16a2 2 0 0 0 2 2h4a2 2 0 0 0 2-2v-1.26A7 7 0 0 0 12 2Z" />
       </>
     ),
     stats: (
@@ -201,6 +210,7 @@ function App() {
   const [uiLanguage, setUiLanguage] = useState<UiLanguage>(savedSettings?.uiLanguage ?? 'it')
   const [theme, setTheme] = useState<ThemeMode>(savedSettings?.theme ?? 'light')
   const [helpOpen, setHelpOpen] = useState(false)
+  const [hintOpen, setHintOpen] = useState(false)
   const [statsOpen, setStatsOpen] = useState(false)
   const [sourcesOpen, setSourcesOpen] = useState(false)
   const [resultOpen, setResultOpen] = useState(false)
@@ -245,6 +255,7 @@ function App() {
     setCurrentGuessLetters(buildEmptyGuess(pack.wordLength))
     setActiveCellIndex(0)
     setResultOpen(nextState.status !== 'playing')
+    setHintOpen(false)
     setRevealRowIndex(null)
     setMessage('')
   }, [pack])
@@ -409,8 +420,35 @@ function App() {
     addLetter(key)
   }
 
+  function openHint() {
+    if (!answer) {
+      return
+    }
+
+    if (gameState.status === 'playing' && gameState.hintsUsed === 0) {
+      const nextState = {
+        ...gameState,
+        hintsUsed: 1,
+      }
+      setGameState(nextState)
+      persistState(nextState)
+    }
+
+    setHintOpen(true)
+  }
+
   const gameHeaderControls = (
     <div className="game-controls">
+      <button
+        aria-label={t.hint}
+        className={`ghost-button icon-button ${gameState.hintsUsed > 0 ? 'hint-button-used' : ''}`}
+        disabled={!answer}
+        onClick={openHint}
+        title={t.hint}
+        type="button"
+      >
+        <Icon name="hint" />
+      </button>
       <button
         aria-label={t.help}
         className="ghost-button icon-button"
@@ -584,6 +622,15 @@ function App() {
             >
               {t.sources}
             </button>
+          </div>
+        </Modal>
+      ) : null}
+
+      {hintOpen && answer ? (
+        <Modal title={t.hint} onClose={() => setHintOpen(false)} closeLabel={t.close}>
+          <div className="result-card compact-result">
+            <p>{answer.definition}</p>
+            {answer.category ? <p className="hint-category">{answer.category}</p> : null}
           </div>
         </Modal>
       ) : null}
