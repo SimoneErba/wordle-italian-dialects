@@ -1,7 +1,7 @@
 import posthog from 'posthog-js'
 
 const POSTHOG_PROJECT_API_KEY = 'phc_Cke8VNUGFWiYGJePxTwI4GcwUZqDN03mDI2mqDgZjtC'
-const POSTHOG_API_HOST = 'https://us.i.posthog.com'
+const POSTHOG_API_HOST = 'https://eu.i.posthog.com'
 
 let initialized = false
 
