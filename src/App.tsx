@@ -15,14 +15,12 @@ import { normalizeWord } from './game/text'
 import { loadSettings, loadStats, saveSettings } from './game/storage'
 import { DailyGameState, DialectPack, GameMode, LetterStatus, ThemeMode, UiLanguage } from './types'
 
-const appTitle = 'Wordle - Dialetti Italiani'
-const appSubtitle = 'Un gioco di parole dedicato ai dialetti italiani'
-
 const copy = {
   it: {
     language: 'Lingua',
     theme: 'Tema',
-    title: appTitle,
+    title: 'Wordle - Dialetti Italiani',
+    subtitle: 'Un gioco di parole dedicato ai dialetti italiani',
     dialect: 'Dialetto',
     wordLength: 'Lunghezza',
     lettersCount: (count: number) => `${count} lettere`,
@@ -66,7 +64,8 @@ const copy = {
   en: {
     language: 'Language',
     theme: 'Theme',
-    title: appTitle,
+    title: 'Wordle - Italian Dialects',
+    subtitle: 'A word game dedicated to Italian dialects',
     dialect: 'Dialect',
     wordLength: 'Length',
     lettersCount: (count: number) => `${count} letters`,
@@ -502,7 +501,7 @@ function App() {
           <FlagLogo />
           <h1>{t.title}</h1>
         </div>
-        <p className="eyebrow">{appSubtitle}</p>
+        <p className="eyebrow">{t.subtitle}</p>
       </div>
       <div
         aria-atomic="true"
