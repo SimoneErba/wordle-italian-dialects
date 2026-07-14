@@ -37,6 +37,10 @@ function titleUrl(title: string): string {
 function lexicalPageUrl(entry: DownloadedEntry): string {
   const title = entry.titles[0] ?? entry.word
 
+  if (entry.sources?.includes('Dizionario veneto-italiano Barcon') || entry.sourceUrls.some((url) => url.includes('barcon.it'))) {
+    return entry.sourceUrls.find((url) => url.includes('barcon.it')) ?? 'https://barcon.it/tradizioni-venete/dizionario/'
+  }
+
   if (entry.sources?.includes('Wikizionario corso') || entry.sourceUrls.some((url) => url.includes('cowiktionary'))) {
     return `https://co.wiktionary.org/wiki/${encodeURIComponent(title)}`
   }
@@ -69,6 +73,10 @@ function toAnswer(entry: DownloadedEntry): Answer {
 }
 
 function sourceLabelFromUrl(url: string): string {
+  if (url.includes('barcon.it')) {
+    return 'Dizionario veneto-italiano Barcon'
+  }
+
   if (url.includes('ditzionariu.nor-web.eu')) {
     return 'Ditzionàriu in línia'
   }
@@ -93,6 +101,10 @@ function sourceLabelFromUrl(url: string): string {
 }
 
 function normalizeSourceUrl(url: string): string {
+  if (url.includes('barcon.it')) {
+    return 'https://barcon.it/tradizioni-venete/dizionario/'
+  }
+
   if (url.includes('ditzionariu.nor-web.eu')) {
     return 'https://ditzionariu.nor-web.eu'
   }
@@ -110,6 +122,10 @@ function normalizeSourceUrl(url: string): string {
 }
 
 function sourceLicenseFromUrl(url: string): string | undefined {
+  if (url.includes('barcon.it')) {
+    return 'Licenza fonte da verificare'
+  }
+
   if (url.includes('ditzionariu.nor-web.eu')) {
     return 'Licenza fonte da verificare'
   }

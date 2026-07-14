@@ -8,6 +8,7 @@
     "build": "tsc -b && vite build",
     "preview": "vite preview",
     "download:words": "node scripts/download-wiktionary.mjs",
+    "import:barcon:veneto": "node scripts/import-barcon-veneto.mjs",
     "fill:definitions": "node scripts/fill-wiktionary-definitions.mjs",
     "mark:guessable": "node scripts/mark-guessable-words.mjs",
     "validate:words": "node scripts/validate-words.mjs"

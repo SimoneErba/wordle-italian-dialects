@@ -3,7 +3,7 @@
   "dialectName": "Veneto",
   "downloadedAt": "2026-07-13T13:45:19.604Z",
   "totalRawWords": 2212,
-  "totalUniqueWords": 1998,
+  "totalUniqueWords": 3507,
   "categories": [
     "Sostantivi in veneto",
     "Verbi in veneto",
@@ -20,5 +20,19 @@
       ]
     }
   ],
-  "dumpSources": []
+  "dumpSources": [],
+  "barconSource": {
+    "name": "Dizionario veneto-italiano Barcon",
+    "url": "https://barcon.it/tradizioni-venete/dizionario/",
+    "totalParsedWords": 1649,
+    "totalAddedWords": 1509
+  },
+  "extraSources": [
+    {
+      "name": "Dizionario veneto-italiano Barcon",
+      "url": "https://barcon.it/tradizioni-venete/dizionario/",
+      "totalParsedWords": 1649,
+      "totalAddedWords": 1509
+    }
+  ]
 }
