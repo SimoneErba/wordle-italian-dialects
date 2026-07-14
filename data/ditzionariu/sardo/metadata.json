@@ -1,0 +1,33 @@
+{
+  "dialectId": "sardo",
+  "dialectName": "Sardo",
+  "downloadedAt": "2026-07-13T15:54:52.011Z",
+  "source": "Ditzionàriu in línia de sa limba e de sa cultura sarda",
+  "sourceUrl": "https://ditzionariu.nor-web.eu",
+  "pagesByLetter": {
+    "A": 869,
+    "B": 295,
+    "C": 569,
+    "D": 125,
+    "E": 47,
+    "F": 214,
+    "G": 132,
+    "H": 1,
+    "I": 875,
+    "J": 1,
+    "L": 142,
+    "M": 306,
+    "N": 64,
+    "O": 80,
+    "P": 404,
+    "R": 126,
+    "S": 425,
+    "T": 254,
+    "TZ": 70,
+    "U": 37,
+    "V": 45,
+    "X": 1,
+    "Z": 26
+  },
+  "totalUniqueWords": 54613
+}

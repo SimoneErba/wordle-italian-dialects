@@ -1,0 +1,25 @@
+{
+  "dialectId": "siciliano",
+  "dialectName": "Siciliano",
+  "downloadedAt": "2026-07-13T14:05:31.152Z",
+  "totalRawWords": 15834,
+  "totalUniqueWords": 12995,
+  "categories": [
+    "Sostantivi in siciliano",
+    "Verbi in siciliano",
+    "Aggettivi in siciliano"
+  ],
+  "apiSources": [],
+  "dumpSources": [
+    {
+      "name": "Wikizionario siciliano",
+      "root": "https://dumps.wikimedia.org/scnwiktionary/latest",
+      "dumpPrefix": "scnwiktionary",
+      "categoryKeys": [
+        "sustantivi siciliani",
+        "verbi siciliani",
+        "aggittivi siciliani"
+      ]
+    }
+  ]
+}

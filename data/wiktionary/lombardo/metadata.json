@@ -1,0 +1,25 @@
+{
+  "dialectId": "lombardo",
+  "dialectName": "Lombardo",
+  "downloadedAt": "2026-07-13T13:49:42.316Z",
+  "totalRawWords": 24877,
+  "totalUniqueWords": 22059,
+  "categories": [
+    "Sostantivi in lombardo",
+    "Verbi in lombardo",
+    "Aggettivi in lombardo"
+  ],
+  "apiSources": [],
+  "dumpSources": [
+    {
+      "name": "Wikizionario lombardo",
+      "root": "https://dumps.wikimedia.org/lmowiktionary/latest",
+      "dumpPrefix": "lmowiktionary",
+      "categoryKeys": [
+        "nom in lombard",
+        "verb in lombard",
+        "agetiv in lombard"
+      ]
+    }
+  ]
+}

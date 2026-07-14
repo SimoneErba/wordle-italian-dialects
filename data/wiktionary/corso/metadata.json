@@ -1,0 +1,25 @@
+{
+  "dialectId": "corso",
+  "dialectName": "Corso",
+  "downloadedAt": "2026-07-13T14:05:42.214Z",
+  "totalRawWords": 2002,
+  "totalUniqueWords": 1955,
+  "categories": [
+    "Sostantivi in corso",
+    "Verbi in corso",
+    "Aggettivi in corso"
+  ],
+  "apiSources": [],
+  "dumpSources": [
+    {
+      "name": "Wikizionario corso",
+      "root": "https://dumps.wikimedia.org/cowiktionary/latest",
+      "dumpPrefix": "cowiktionary",
+      "categoryKeys": [
+        "sustantivi corsi",
+        "verbi corsi",
+        "aghjettivi corsi"
+      ]
+    }
+  ]
+}

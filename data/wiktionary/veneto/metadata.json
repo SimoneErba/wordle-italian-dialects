@@ -1,0 +1,24 @@
+{
+  "dialectId": "veneto",
+  "dialectName": "Veneto",
+  "downloadedAt": "2026-07-13T13:45:19.604Z",
+  "totalRawWords": 2212,
+  "totalUniqueWords": 1998,
+  "categories": [
+    "Sostantivi in veneto",
+    "Verbi in veneto",
+    "Aggettivi in veneto"
+  ],
+  "apiSources": [
+    {
+      "name": "Wikizionario veneto",
+      "api": "https://vec.wiktionary.org/w/api.php",
+      "categories": [
+        "Nòmi in vèneto",
+        "Verbi in vèneto",
+        "Ajetivi in vèneto"
+      ]
+    }
+  ],
+  "dumpSources": []
+}
