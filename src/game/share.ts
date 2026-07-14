@@ -14,7 +14,7 @@ export function buildShareText(args: {
   won: boolean
 }): string {
   const score = args.won ? `${args.evaluations.length}/6` : 'X/6'
-  const title = `PAROLÌ ${args.pack.name} #${getPuzzleNumber(args.pack, args.date)}`
+  const title = `WORDLE ${args.pack.name} #${getPuzzleNumber(args.pack, args.date)}`
   const grid = args.evaluations
     .map((row) => row.map((tile) => emojiMap[tile.status]).join(''))
     .join('\n')

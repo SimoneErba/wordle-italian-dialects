@@ -1,14 +1,54 @@
 <!doctype html>
-<html lang="it">
+<html lang="it" prefix="og: https://ogp.me/ns#">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta
       name="description"
-      content="Wordle - Dialetti Italiani, un gioco di parole quotidiano ispirato ai dialetti italiani."
+      content="Gioca a Wordle dei dialetti italiani: indovina ogni giorno parole in veneto, sardo, siciliano, napoletano, lombardo e corso."
     />
+    <meta
+      name="keywords"
+      content="wordle, wordle italiano, gioco parole, dialetti italiani, dialetto veneto, sardo, siciliano, napoletano, lombardo, corso"
+    />
+    <meta name="author" content="Wordle Dialetti Italiani" />
+    <meta name="robots" content="index, follow" />
+    <meta name="theme-color" content="#f8fafc" />
+    <meta name="application-name" content="Wordle Dialetti" />
+    <meta name="apple-mobile-web-app-title" content="Wordle Dialetti" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:locale" content="it_IT" />
+    <meta property="og:site_name" content="Wordle Dialetti Italiani" />
+    <meta property="og:title" content="Wordle dei dialetti italiani" />
+    <meta
+      property="og:description"
+      content="Un gioco di parole quotidiano ispirato a Wordle, con dizionari di dialetti e lingue regionali italiane."
+    />
+
+    <meta name="twitter:card" content="summary" />
+    <meta name="twitter:title" content="Wordle dei dialetti italiani" />
+    <meta
+      name="twitter:description"
+      content="Indovina parole in veneto, sardo, siciliano, napoletano, lombardo e corso."
+    />
+
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <title>Wordle - Dialetti Italiani</title>
+    <title>Wordle dei Dialetti Italiani</title>
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Game",
+        "name": "Wordle dei Dialetti Italiani",
+        "alternateName": "Wordle Dialetti",
+        "description": "Gioco di parole quotidiano ispirato a Wordle con dialetti e lingue regionali italiane: veneto, sardo, siciliano, napoletano, lombardo e corso.",
+        "genre": ["Word game", "Puzzle game"],
+        "gamePlatform": "Web browser",
+        "inLanguage": ["it", "en"],
+        "isAccessibleForFree": true,
+        "keywords": "wordle, gioco di parole, dialetti italiani, veneto, sardo, siciliano, napoletano, lombardo, corso"
+      }
+    </script>
   </head>
   <body>
     <div id="root"></div>
